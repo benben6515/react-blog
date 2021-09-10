@@ -19,6 +19,7 @@
   - @emotion
 
 `pages/` 下都用一個頁面，就沒有在拆分 component 了
+
 `styles/` 下放的都是純 CSS 的東西，還有共用的小東西，程式碼不多就沒有再拆分出來，統一放在 `GlobalStyle.js` 裡面
 
 [Demo]()

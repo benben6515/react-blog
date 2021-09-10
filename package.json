@@ -23,7 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "homepage": "",
+  "homepage": "https://benben6515.github.io/react-blog",
   "eslintConfig": {
     "extends": [
       "react-app",
