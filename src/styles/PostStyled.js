@@ -82,7 +82,7 @@ const PostStyled = styled.div`
     width: 100%;
     justify-content: flex-start;
     grid-template-columns: 100%;
-    grid-template-rows: 3rem 1rem auto;
+    grid-template-rows: auto 1rem auto;
     .title {
       grid-row-start: 1;
       grid-row-end: 2;
