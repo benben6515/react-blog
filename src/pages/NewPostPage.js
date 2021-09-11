@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 import styled from '@emotion/styled'
 
 import ErrorPage from '../pages/ErrorPage.js'
-import { Wrap, Button, Container } from '../styles/GlobalStyle'
+import { Wrap, Button } from '../styles/GlobalStyle'
 import { addPost } from '../webAPI.js'
 import { getAuthToken } from '../localStorageAPI.js'
 import { AuthContext, LoadingContext } from '../contexts.js'
@@ -109,9 +109,7 @@ const NewPost = () => {
     <>
       <Wrap>
         <NewPostWrap>
-          <Container>
-            {user ? <Input user={user}/> : <ErrorPage title="Login first..." /> }
-          </Container>
+          {user ? <Input user={user}/> : <ErrorPage title="Login first..." /> }
         </NewPostWrap>
       </Wrap>
     </>
