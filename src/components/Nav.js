@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useRef } from 'react'
 import { Link, useRouteMatch, useHistory, useLocation } from 'react-router-dom'
 import styled from '@emotion/styled'
 
@@ -243,6 +243,11 @@ const Nav = ({currentTheme, setCurrentTheme}) => {
   const { user, setUser } = useContext(AuthContext)
   const location = useLocation()
   const history = useHistory()
+  const toggleNav = useRef(null)
+
+  useEffect(() => {
+    toggleNav.current.checked = false
+  },[location])
   
   const handleTheme = () => {
     if (currentTheme === 'light') {
@@ -275,10 +280,10 @@ const Nav = ({currentTheme, setCurrentTheme}) => {
         <label htmlFor="menu__control" id="menu__btn">
           <span>menu</span>
         </label>
-        <input id="menu__control" type="checkbox" />
+        <input id="menu__control" type="checkbox" ref={toggleNav}/>
         <Buttons>
 
-          <NavButtonWrap to="/about" title="About" activeOnlyWhenExact={true}/>
+          <NavButtonWrap to="/about" title="About" activeOnlyWhenExact={true} />
           {user
             ? ( <NavButtonWrap to="/new-post" title="New Post" activeOnlyWhenExact={true}/> )
             : ( <NavButtonWrap to="/login" title="Login" activeOnlyWhenExact={true}/> )
