@@ -34,8 +34,8 @@ function Blog() {
     (async() => {
       if (!getAuthToken()) return
       setIsLoading(true)
-      const res = await getMe()
-      if (res.ok) setUser(res.data)
+      const res = await getMe(getAuthToken())
+      if (res.ok) await setUser(res.data)
       setIsLoading(false)
     })()
   }, [])

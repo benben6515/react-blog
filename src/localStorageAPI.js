@@ -6,7 +6,7 @@ const setAuthToken = (token) => {
 }
 
 const getAuthToken = () => {
-  return localStorage.getItem(TOKEN_NAME)
+  return localStorage.getItem(TOKEN_NAME) || ''
 }
 
 const setTheme = (theme) => {

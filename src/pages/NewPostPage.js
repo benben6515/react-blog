@@ -14,7 +14,7 @@ const NewPostWrap = styled(Wrap)`
 `
 
 const InputWrap = styled.form`
-  width: clamp(25ch, 70%, 65ch);
+  width: clamp(25ch, 70%, 70ch);
   padding: 1rem;
   margin-top: 3rem;
   box-shadow: ${({theme}) => theme.navBoxShadow};
@@ -54,6 +54,13 @@ const InputWrap = styled.form`
     height: auto;
     resize: vertical;
   }
+  span {
+    max-width: 100%;
+    align-self: flex-end;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 `
 
 const Input  = ({ user }) => {
@@ -85,7 +92,7 @@ const Input  = ({ user }) => {
 
   return (
     <InputWrap onSubmit={handleSubmit}>
-      <h1>發布文章</h1>
+      <h1>發布文章</h1><span> - {user.nickname}</span>
       {errorMessage && <div>{errorMessage}！</div>}
       <div className="title">標題：</div>
       <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="請輸入標題..."/>
