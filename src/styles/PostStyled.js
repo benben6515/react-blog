@@ -80,6 +80,7 @@ const PostStyled = styled.div`
   }
   @media screen and (max-width: 840px) {
     width: 100%;
+    box-sizing: border-box;
     justify-content: flex-start;
     grid-template-columns: 100%;
     grid-template-rows: auto 1rem auto;

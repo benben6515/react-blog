@@ -31,7 +31,7 @@ const Button = styled.button`
 `
 
 const Wrap = styled.div`
-  width: clamp(30ch, 60%, 75ch);
+  width: clamp(35ch, 60%, 75ch);
   margin: 3rem auto 0rem;
   * {
     color: ${({theme}) => theme.textColor}
